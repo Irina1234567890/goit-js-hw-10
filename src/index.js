@@ -22,8 +22,8 @@ function onSearchInput(e) {
   console.log(searchQuery)
   
   if(searchQuery === ""){
-     return (refs.countryList.innerHTML = ''),
-      (refs.countryInfo.innerHTML = '')   
+     refs.countryList.innerHTML = '',
+    refs.countryInfo.innerHTML = ''   
   }
 
   fetchCountries(searchQuery)
@@ -46,7 +46,7 @@ function searchCountry(countries) {
           Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
       }
       else {
-          refs.countryList.insertAdjacentHTML('beforeend', createCountryList(countries))
+          countries.length >= 2 & countries.length <= 1
       }
 }
 
